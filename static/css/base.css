@@ -44,8 +44,9 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: rgb(230, 230, 230);
+    color: black;
+    border: 1px solid black;
 }
 
 .text-black {
@@ -89,6 +90,19 @@ a.category-badge > span.badge:hover {
 
 .btt-button a:hover {
     background: rgb(201, 201, 201);
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important;
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
 }
 
 /* -------------------------------- Media Queries */

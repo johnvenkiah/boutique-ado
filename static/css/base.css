@@ -42,8 +42,7 @@ body {
 .shop-now-button:active,
 .shop-now-button:focus,
 .btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-black:active {
     background: rgb(230, 230, 230);
     color: black;
     border: 1px solid black;

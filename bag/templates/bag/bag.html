@@ -151,7 +151,7 @@
 
         // get item id by using split with the id attr
         let itemId = $(this).attr('id').split('remove_')[1];
-        let size = $(this).data('size');
+        let size = $(this).data('product_size');
         let url = `/bag/remove/${itemId}`;
 
         // Field Django is expecting to see when for mis posted to the server

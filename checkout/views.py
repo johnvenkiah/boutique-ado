@@ -23,11 +23,11 @@ def checkout(request):
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
         amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY
+        currency=settings.STRIPE_CURRENCY,
     )
     print(intent)
 
-    order_form = OrderForm()'
+    order_form = OrderForm()
     
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key missing, \

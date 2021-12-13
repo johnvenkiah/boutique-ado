@@ -36,7 +36,7 @@ class OrderAdmin(admin.ModelAdmin):
         'full_name',
         'delivery_cost',
         'order_total',
-        'grand_total'
+        'grand_total',
     )
 
     ordering = ('-date',)

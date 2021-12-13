@@ -34,7 +34,7 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0
     )
 
-    def generate_order_number(self):
+    def _generate_order_number(self):
         """
         Generate random unique order number using UUID
         """
@@ -47,7 +47,7 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total')
-        )['lineitem_total__sum']
+        )['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = (self.order_total
             * settings.STANDARD_DELIVERY_PERCENTAGE / 100
@@ -63,7 +63,7 @@ class Order(models.Model):
         """
         if not self.order_number:
             self.order_number = self._generate_order_number()
-            super().save(*args, **kwargs)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_number

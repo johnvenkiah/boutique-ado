@@ -1,1 +1,1 @@
-web: gunicorn jvenkiah-boutique-ado.wsgi:application
+web: gunicorn boutique-ado.wsgi:application
